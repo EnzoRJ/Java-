@@ -12,6 +12,8 @@ public class Persona {
         contadorPersonas=10;
         System.out.println("Primer bloque de codigo");
     }
+
+    //Se agrega a cada constructor
     {
         System.out.println("Ejecuta bloque inicializador");
         idPersona=++contadorPersonas;
