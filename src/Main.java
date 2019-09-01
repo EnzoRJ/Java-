@@ -1,37 +1,29 @@
 public class Main {
 
     public static void main(String[] args) {
-        figuraGeometrica figura = new figuraGeometrica();
-        figura = new Elipse();
-        determinarTipoFigura(figura);
-        determinarTodosLosTipos(figura);
+        Empleado e1 = new Empleado("Enzo",4000);
+        Empleado e2 = new Empleado("Enzo",4000);
+        compararObjetos(e1,e2);
+    }
+    public static void compararObjetos(Empleado e1,Empleado e2){
+        System.out.println("Contenido objeto: "+e1);
+        if (e1==e2){
+            System.out.println("Los objetos tienen la misma direccion de memoria");
+        }
+        else
+            System.out.println("Los objetos tienes diferente direccion de memoria");
+        //REVISION MODO EQUALS
+        if (e1.hashCode()==e2.hashCode()){
+            System.out.println("Los objetos tienen el mismo contenido");
+        }
+        else
+            System.out.println("Los objetos NO tienen el mismo contenido");
+        //Metodo hashCode
+        if (e1.hashCode()==e2.hashCode()){
+            System.out.println("Los objetos tienen el mismo codigo hash");
+        }
+        else
+            System.out.println("Los objetos NO tienen el mismo codigo hash");
     }
 
-    private static void determinarTipoFigura(figuraGeometrica figura) {
-        if (figura instanceof Elipse) {
-            System.out.println("Es un elipse");
-        } else if (figura instanceof Circulo) {
-            System.out.println("Es un circulo");
-        } else if (figura instanceof Rectangulo) {
-            System.out.println("Es un rectangulo");
-        } else if (figura instanceof figuraGeometrica) {
-            System.out.println("Es una figura geometrica");
-        } else {
-            System.out.println("No se encontro el tipo de objeto");
-        }
-    }
-    private static void determinarTodosLosTipos(figuraGeometrica figura){
-        if (figura instanceof Elipse) {
-            System.out.println("Es un elipse");
-        } if (figura instanceof Circulo) {
-            System.out.println("Es un circulo");
-        } if (figura instanceof figuraGeometrica) {
-            System.out.println("Es una figura geometroca");
-        } if (figura instanceof Object){
-            System.out.println("Es un tipo Object");
-        } else{
-            System.out.println("No se descubrio su tipo");
-        }
-    }
 }
-
