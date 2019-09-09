@@ -3,17 +3,10 @@ package arraylist;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class UsoEmpleado {
     public static void main(String[] args) {
-
-        /*
-        Empleado listaEmpleados[] = new Empleado[3];
-        listaEmpleados[0] = new Empleado("Enzo",1000,34);
-        listaEmpleados[1]=new Empleado("Pedro",4500,30);
-        listaEmpleados[2]=new Empleado("Juan",3000,31);
-
-         */
 
         ArrayList<Empleado> listaEmpleados = new ArrayList<Empleado>();
         listaEmpleados.add(new Empleado("Enzo",4000,34));
@@ -23,12 +16,15 @@ public class UsoEmpleado {
         listaEmpleados.add(new Empleado("Gustavo", 4100,32));
         listaEmpleados.add(new Empleado("Francisco", 2900,27));
         listaEmpleados.set(1,new Empleado("caro",3000,28));
+        //Obtiene posicion en especifico
         System.out.println(listaEmpleados.get(3));
+        //Total de objetos
         System.out.println(listaEmpleados.size());
+        //Establecer lugar para el ingreso
+        listaEmpleados.set(0, new Empleado("Fran",15000,30));
 
         for (Empleado e:listaEmpleados) {
             System.out.println(e.toString());
-
         }
         System.out.println(" ");
 
@@ -52,13 +48,17 @@ public class UsoEmpleado {
             System.out.println(counter);
         }
 
-        /* Sorting of arraylist using Collections.sort*/
+        //Ordenar un arrayList
         Collections.sort(arraylist);
-
-        /* ArrayList after sorting*/
-        System.out.println("Despues de Sorting:");
+        System.out.println("Despues del Sort:");
         for(int counter: arraylist){
             System.out.println(counter);
+        }
+
+
+        Iterator<Empleado> miIterador = listaEmpleados.iterator();
+        while (miIterador.hasNext()){
+            System.out.println(miIterador.next().toString());
         }
     }
 
